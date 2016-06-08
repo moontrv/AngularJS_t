@@ -1,8 +1,12 @@
-var HeaderCtrl = function($scope){
-	$scope.appDetails = {};
-	$scope.appDetails.title = "BooKart";
-	$scope.appDetails.tagline = "We have collection of 1 Million books";
-}
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.firstName = "John";
+    $scope.lastName = "Doe";
+	$scope.appDetails = {
+		title : "BooKart",
+		tagline : "We have collection of 1 Million books"
+	};
+});
 
 var BookListCtrl = function($scope){
 	$scope.books = [
