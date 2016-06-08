@@ -8,8 +8,8 @@
 <script src="app.js"></script> 
 </head>
 <body>
-
-	<div id="header-wrapper" ng-app="myApp" ng-controller="myCtrl">
+	<div ng-app="myApp">
+	<div id="header-wrapper" ng-controller="myCtrl">
 		<span class="logo pull-left">{{appDetails.title}}</span>
 		<span class="tagline pull-left">{{appDetails.tagline}}</span>
 		<div class="nav-wrapper pull-left">
@@ -18,9 +18,9 @@
 				<li><a href="#">Kart</a></li>
 			</ul>
 		</div>
+		
 	</div>
-	
-	<div id="bookListWrapper" ng-app="myApp" ng-controller="BookListCtrl">
+	<div id="header-wrapper" ng-controller="BookListCtrl">
 		<form role="form">
 			<div class="form-group">
 				<input type="text" class="form-control" placeholder="Search here...">
@@ -28,23 +28,23 @@
 		</form>
 		<div>
 		<ul class="list-unstyled">
-			<li class="book" style="background: white url(aba-04.png) no-repeat" ng-repeat="book in books">
+			<li class="book" style="background: white url({{book.imgUrl}}) no-repeat" ng-repeat="book in books">
 				<div class="book-details clearfix">
 					<h3>{{book.name}}</h3>
 					<p>2016</p>
 					<ul class="list-unstyled list-inline">
-						<li>Rating: 4</li>
-						<li>Binding: Paperback</li>
-						<li>Publisher: Random House India</li>
-						<li>Release: 12-08.2014</li>
+						<li>Rating: {{book.rating}}</li>
+						<li>Binding: {{book.binding}}</li>
+						<li>Publisher: {{book.publisher}}</li>
+						<li>Released: {{book.releaseDate}}</li>
 					</ul>
-					<p>Adam in his spare time, continuously question routine of working people around him.</p>
-					<button class="btn btn-info pull-right">Add to Kart</button>
+					<p>{{book.details}}</p>
+					<button class="btn btn-info pull-right" ng-click="addToCart(book)">Add to Kart</button>
 				</div>
 			</li>
 		</ul>
 		</div>
 	</div>
-
+	</div>
 </body>
 </html>

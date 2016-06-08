@@ -22,6 +22,10 @@ nav-wrapper{
 	margin-top:15px;
 }
 
+.book{
+	//width:100%;	
+}
+
 #bookListWrapper{
 	width: 100%;
 	padding: 10px;
